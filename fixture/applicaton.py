@@ -1,12 +1,10 @@
 from selenium import webdriver
-from selenium.common.exceptions import NoAlertPresentException
-from selenium.common.exceptions import NoSuchElementException
-from osve.fixture.session import SessionHelper
+from fixture.session import SessionHelper
 
 
 class Application:
 
-    def __init__(self, browser, base_url="http://localhost/addressbook"):
+    def __init__(self, browser, base_url):
         if browser == "firefox":
             self.driver = webdriver.Firefox()
         elif browser == "chrome":
@@ -17,8 +15,6 @@ class Application:
             raise ValueError("unrecognized browser %s" % browser)
 #        self.driver.implicitly_wait(10)
         self.session = SessionHelper(self)
-        self.group = GroupHelper(self)
-        self.contact = ContactHelper(self)
         self.base_url=base_url
 
     def is_valid(self):
