@@ -1,3 +1,0 @@
-
-def signup(app):
-    pass

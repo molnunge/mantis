@@ -1,10 +1,11 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.james import JamesHelper
 
-
+print("AppStart")
 class Application:
 
-    def __init__(self, browser, base_url):
+    def __init__(self, browser, config):
         if browser == "firefox":
             self.driver = webdriver.Firefox()
         elif browser == "chrome":
@@ -15,7 +16,9 @@ class Application:
             raise ValueError("unrecognized browser %s" % browser)
 #        self.driver.implicitly_wait(10)
         self.session = SessionHelper(self)
-        self.base_url=base_url
+        self.james = JamesHelper(self)
+        self.config = config
+        self.base_url=config['web']['baseUrl']
 
     def is_valid(self):
         try:

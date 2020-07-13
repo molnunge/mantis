@@ -62,6 +62,7 @@ $g_db_password			= '';
  */
  
  $g_use_captcha = off;
+ 
 /**
 for autotest purposes
 */
