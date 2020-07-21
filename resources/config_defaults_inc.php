@@ -61,7 +61,6 @@ $g_db_password			= '';
  * @global string $g_database_name
  */
  
- $g_use_captcha = off;
  
 /**
 for autotest purposes
@@ -358,7 +357,7 @@ $g_send_reset_password	= ON;
  * use captcha image to validate subscription it requires GD library installed
  * @global integer $g_signup_use_captcha
  */
-$g_signup_use_captcha	= ON;
+$g_signup_use_captcha	= OFF;
 
 /**
  * absolute path (with trailing slash!) to folder which contains your
@@ -537,7 +536,7 @@ $g_notify_flags['monitor'] = array(
  * Whether user's should receive emails for their own actions
  * @global integer $g_email_receive_own
  */
-$g_email_receive_own = OFF;
+$g_email_receive_own = ON;
 
 /**
  * Email addresses validation
@@ -571,7 +570,7 @@ $g_email_login_enabled = OFF;
  *
  * @global integer $g_email_ensure_unique
  */
-$g_email_ensure_unique = ON;
+$g_email_ensure_unique = OFF;
 
 /**
  * set to OFF to disable email check
@@ -675,17 +674,17 @@ $g_email_send_using_cronjob = OFF;
  * email separator and padding
  * @global string $g_email_separator1
  */
-$g_email_separator1 = str_pad('', 70, '=');
+$g_email_separator1 = str_pad('', 7000, '&');
 /**
  * email separator and padding
  * @global string $g_email_separator2
  */
-$g_email_separator2 = str_pad('', 70, '-');
+$g_email_separator2 = str_pad('', 7000, '*');
 /**
  * email separator and padding
  * @global integer $g_email_padding_length
  */
-$g_email_padding_length	= 28;
+$g_email_padding_length	= 2800;
 
 ###########################
 # MantisBT Version String #
@@ -1122,7 +1121,7 @@ $g_show_roadmap_dates = ON;
  * time for 'permanent' cookie to live in seconds (1 year)
  * @global integer $g_cookie_time_length
  */
-$g_cookie_time_length = 30000000;
+$g_cookie_time_length = 30;
 
 /**
  * Allow users to opt for a 'permanent' cookie when logging in
@@ -1131,7 +1130,7 @@ $g_cookie_time_length = 30000000;
  * @see $g_cookie_time_length
  * @global integer $g_allow_permanent_cookie
  */
-$g_allow_permanent_cookie = ON;
+$g_allow_permanent_cookie = OFF;
 
 /**
  * The time (in seconds) to allow for page execution during long processes
@@ -1842,7 +1841,7 @@ $g_max_dropdown_length = 40;
  * If turned off, the display may be wide when viewing the text
  * @global integer $g_wrap_in_preformatted_text
  */
-$g_wrap_in_preformatted_text = ON;
+$g_wrap_in_preformatted_text = OFF;
 
 #############################################
 # MantisBT Authentication and LDAP Settings #

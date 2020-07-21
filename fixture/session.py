@@ -1,3 +1,4 @@
+import time
 class SessionHelper:
 
     def __init__(self, app):
@@ -6,11 +7,17 @@ class SessionHelper:
     def login(self, username, password):
         driver = self.app.driver
         self.app.open_home_page(driver)
+        time.sleep(3)
         driver.find_element_by_name("username").click()
         driver.find_element_by_name("username").clear()
+        time.sleep(3)
         driver.find_element_by_name("username").send_keys(username)
+        time.sleep(3)
+        driver.find_element_by_name("password").click()
         driver.find_element_by_name("password").clear()
+        time.sleep(3)
         driver.find_element_by_name("password").send_keys(password)
+        time.sleep(3)
         driver.find_element_by_css_selector("input[type='submit']").click()
 
     def logout(self):
